@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form 1</title>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script
+      src="https://www.google.com/recaptcha/api.js?hl=en"
+      async
+      defer
+    ></script>
     <style>
       html {
         font-family: sans-serif;
@@ -118,7 +122,7 @@
             type="text"
             id="confirm_password"
             minlength="8"
-            placeholder="Enter your password min 8 character"
+            placeholder="Confirm password"
           />
         </div>
         <div class="row">
@@ -146,7 +150,13 @@
         </div>
         <div class="row">
           <label for="address">Address</label>
-          <textarea name="address" id="address" cols="30" rows="5"></textarea>
+          <textarea
+            name="address"
+            id="address"
+            cols="30"
+            rows="5"
+            placeholder="Enter your address"
+          ></textarea>
         </div>
         <div class="row">
           <label for="state">State</label>
