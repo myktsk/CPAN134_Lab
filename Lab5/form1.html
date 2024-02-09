@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form 1</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      .form_wrapper {
+        width: 64%;
+        max-width: 640px;
+        border: 4px solid #25c1bd;
+        position: relative;
+        box-sizing: border-box;
+        padding: 40px 24px;
+      }
+
+      .form_wrapper:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 2px solid #42277c;
+        pointer-events: none;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        margin: 16px 0;
+      }
+
+      label {
+        width: 25%;
+      }
+
+      input,
+      textarea,
+      select {
+        flex: 1;
+        padding: 8px;
+        border-radius: 0;
+        border: 2px solid #ff5e52;
+      }
+
+      fieldset {
+        border: 0;
+        padding: 0;
+        margin: 0;
+        min-width: 0;
+      }
+
+      .button {
+        border: none;
+        background: none;
+        font-size: 16px;
+        width: 20%;
+        padding: 8px 24px;
+        cursor: pointer;
+        color: #fff;
+        background-image: linear-gradient(
+          to bottom right,
+          #ed4572 0%,
+          #32287f 100%
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form_wrapper">
+      <h1 style="text-align: center; color: #ff5e52; font-size: 24px">
+        STUDENT REGISTRATION FORM
+      </h1>
+      <form action="/action_page.php" method="post">
+        <div class="row">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" placeholder="Enter First Name" />
+        </div>
+        <div class="row">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" placeholder="Enter Last Name" />
+        </div>
+        <div class="row">
+          <label for="gender">Gender</label>
+          <input type="radio" name="gender" value="male" id="male" />
+          <label for="male">Male</label>
+          <input type="radio" name="gender" value="female" id="female" />
+          <label for="female">Female</label>
+        </div>
+        <div class="row">
+          <label for="age">Age</label>
+          <input type="number" id="age" placeholder="Enter your age" />
+        </div>
+        <div class="row">
+          <label for="birthday">Date of Birth</label>
+          <input type="date" id="birthday" />
+        </div>
+        <div class="row">
+          <label for="email">Email Address</label>
+          <input type="text" id="email" placeholder="Enter your email" />
+        </div>
+        <div class="row">
+          <label for="password">Password</label>
+          <input
+            type="text"
+            id="password"
+            minlength="8"
+            placeholder="Enter your password min 8 character"
+          />
+        </div>
+        <div class="row">
+          <label for="confirm_password">Confirm Password</label>
+          <input
+            type="text"
+            id="confirm_password"
+            minlength="8"
+            placeholder="Enter your password min 8 character"
+          />
+        </div>
+        <div class="row">
+          <label for="tel">Phone Number</label>
+          <div style="display: flex; gap: 8px; flex: 1">
+            <select
+              name="country_number"
+              id="country_number"
+              style="flex: 0; border: 1px solid #000"
+            >
+              <option value="1">+1</option>
+              <option value="81">+81</option>
+              <option value="300">+300</option>
+              <option value="400">+400</option>
+              <option value="512">+512</option>
+              <option value="667">+667</option>
+            </select>
+            <input
+              type="tel"
+              id="tel"
+              placeholder="Enter your phone number"
+              style="flex: 1"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <label for="address">Address</label>
+          <textarea name="address" id="address" cols="30" rows="5"></textarea>
+        </div>
+        <div class="row">
+          <label for="state">State</label>
+          <select name="state" id="state">
+            <option value="">--Select your state--</option>
+            <option value="ontario">Ontario</option>
+            <option value="quebec">Quebec</option>
+            <option value="nova_scotia">Nova Scotia</option>
+            <option value="new_brunswick">New Brunswick</option>
+            <option value="monitoba">Manitoba</option>
+            <option value="british_columbia">British Columbia</option>
+            <option value="prince_edward_island">Prince Edward Island</option>
+            <option value="saskatchewan">Saskatchewan</option>
+            <option value="british_columbia">Alberta</option>
+            <option value="newfoundland_and_labrador">
+              Newfoundland and Labrador
+            </option>
+          </select>
+        </div>
+        <div class="row">
+          <label for="pincode">Pin Code</label>
+          <input type="number" id="pincode" placeholder="Enter your pin code" />
+        </div>
+        <fieldset class="row">
+          <legend style="float: left">Hobbies</legend>
+          <div>
+            <input type="checkbox" id="music" name="hobbies" />
+            <label for="music">Music</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="movies" name="hobbies" />
+            <label for="movies">Movies</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="sports" name="hobbies" />
+            <label for="sports">Sports</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="travel" name="travel" />
+            <label for="travel">Travel</label>
+          </div>
+        </fieldset>
+        <div class="row">
+          <label for="file">Upload Photo</label>
+          <p style="color: red">* Max size<br />100kb</p>
+          <input
+            type="file"
+            id="file"
+            name="file"
+            accept="image/png, image/jpeg"
+            size="100000"
+            style="border: none"
+          />
+        </div>
+        <div class="row">
+          <input
+            type="checkbox"
+            required
+            name="approval"
+            id="approval"
+            style="flex: 0; border: 2px solid #ff5e52; appearance: none"
+          />
+          <label for="approval" style="flex: 1; width: auto"
+            >I hereby declare that the above information provided is true and
+            correct</label
+          >
+        </div>
+        <div
+          class="g-recaptcha"
+          data-sitekey="6LfPgm0pAAAAACHv14XtMQx4Je6Obybz3ln5L0p6"
+        ></div>
+        <div
+          class="row"
+          style="
+            width: 80%;
+            justify-content: space-between;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        >
+          <input class="button" type="submit" value="Register" />
+          <input class="button" type="reset" value="Reset" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
