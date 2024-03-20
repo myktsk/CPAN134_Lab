@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab8</title>
+    <script>
+      //=========================================================
+      // 1. Variable Declaration and Math operations
+      //=========================================================
+      const num1 = 10;
+      const num2 = 5;
+
+      const addition = num1 + num2;
+      console.log("Result of addition: " + addition);
+
+      const subtraction = num1 - num2;
+      console.log("Result of subtraction: " + subtraction);
+
+      const multiplication = num1 * num2;
+      console.log("Result of multiplication: " + multiplication);
+
+      const division = num1 / num2;
+      console.log("Result of division: " + division);
+
+      //=========================================================
+      // 2. String manipulation and Concatenation
+      //=========================================================
+      const firstName = "Miyuki";
+      const lastName = "Tuisku";
+      const fullName = `${firstName} ${lastName}`;
+
+      console.log(fullName);
+
+      //=========================================================
+      // 3. Using “let” and “var” to declare Variables
+      //=========================================================
+      //Global scope
+      let x = 5;
+      var y = 10;
+      console.log(`Global scope(Initial): x = ${x}, y = ${y}`);
+
+      x = 15;
+      y = 20;
+      console.log(`Global scope(Reassigned): x = ${x}, y = ${y}`);
+
+      //Local scope
+      function reassign() {
+        let x = 5;
+        var y = 10;
+        console.log(`Local scope(Initial): x = ${x}, y = ${y}`);
+
+        x = 25;
+        y = 30;
+        console.log(`Local scope(Reassigned): x = ${x}, y = ${y}`);
+      }
+      reassign();
+
+      //=========================================================
+      // 4. Increment and Decrement Operators
+      //=========================================================
+      let counter = 0;
+      counter++;
+      counter++;
+      counter++;
+      counter++;
+      counter++;
+      console.log(`Counter: ${counter}`);
+
+      //=========================================================
+      // 5. Type Conversion and Coercion
+      //=========================================================
+      // Part A
+      const numInString1 = prompt("Enter the first number");
+      const numInString2 = prompt("Enter the second number");
+
+      const sum = Number(numInString1) + Number(numInString2);
+      console.log(`The sum of the two numbers is: ${sum}`);
+
+      // Part B
+      const string = sum.toString() + " years old";
+      console.log(string);
+    </script>
+  </head>
+  <body></body>
+</html>
