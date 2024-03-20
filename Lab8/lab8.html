@@ -4,6 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lab8</title>
+  </head>
+  <body>
+    <h1>Lab 8</h1>
+    <section>
+      <h2>1. Variable Declaration and Math operations</h2>
+      <p id="addition"></p>
+      <p id="subtraction"></p>
+      <p id="multiplication"></p>
+      <p id="division"></p>
+    </section>
+
+    <section>
+      <h2>2. String manipulation and Concatenation</h2>
+      <p id="fullName"></p>
+    </section>
+
+    <section>
+      <h2>3. Using “let” and “var” to declare Variables</h2>
+      <h3>Global Scope</h3>
+      <p id="globalInitial"></p>
+      <p id="globalReassigned"></p>
+      <h3>Local Scope</h3>
+      <p id="localInitial"></p>
+      <p id="localReassigned"></p>
+    </section>
+
+    <section>
+      <h2>4. Increment and Decrement Operators</h2>
+      <p id="increment"></p>
+    </section>
+
+    <section>
+      <h2>5. Type Conversion and Coercion</h2>
+      <h3>Part A</h3>
+      <p id="sum"></p>
+      <h3>Part B</h3>
+      <p id="age"></p>
+    </section>
+
     <script>
       //=========================================================
       // 1. Variable Declaration and Math operations
@@ -12,16 +51,21 @@
       const num2 = 5;
 
       const addition = num1 + num2;
-      console.log("Result of addition: " + addition);
+      const additionElement = document.getElementById("addition");
+      additionElement.innerHTML = "Result of addition: " + addition;
 
       const subtraction = num1 - num2;
-      console.log("Result of subtraction: " + subtraction);
+      const subtractionElement = document.getElementById("subtraction");
+      subtractionElement.innerHTML = "Result of subtraction: " + subtraction;
 
       const multiplication = num1 * num2;
-      console.log("Result of multiplication: " + multiplication);
+      const multiplicationElement = document.getElementById("multiplication");
+      multiplicationElement.innerHTML =
+        "Result of multiplication: " + multiplication;
 
       const division = num1 / num2;
-      console.log("Result of division: " + division);
+      const divisionElement = document.getElementById("division");
+      divisionElement.innerHTML = "Result of division: " + division;
 
       //=========================================================
       // 2. String manipulation and Concatenation
@@ -29,8 +73,8 @@
       const firstName = "Miyuki";
       const lastName = "Tuisku";
       const fullName = `${firstName} ${lastName}`;
-
-      console.log(fullName);
+      const fullNameElement = document.getElementById("fullName");
+      fullNameElement.innerHTML = "Full Name: " + fullName;
 
       //=========================================================
       // 3. Using “let” and “var” to declare Variables
@@ -38,21 +82,27 @@
       //Global scope
       let x = 5;
       var y = 10;
-      console.log(`Global scope(Initial): x = ${x}, y = ${y}`);
+      const globalInitialElement = document.getElementById("globalInitial");
+      globalInitialElement.innerHTML = `Initial: x = ${x}, y = ${y}`;
 
       x = 15;
       y = 20;
-      console.log(`Global scope(Reassigned): x = ${x}, y = ${y}`);
+      const globalReassignedElement =
+        document.getElementById("globalReassigned");
+      globalReassignedElement.innerHTML = `Reassigned: x = ${x}, y = ${y}`;
 
       //Local scope
       function reassign() {
         let x = 5;
         var y = 10;
-        console.log(`Local scope(Initial): x = ${x}, y = ${y}`);
+        const localInitialElement = document.getElementById("localInitial");
+        localInitialElement.innerHTML = `Initial: x = ${x}, y = ${y}`;
 
         x = 25;
         y = 30;
-        console.log(`Local scope(Reassigned): x = ${x}, y = ${y}`);
+        const localReassignedElement =
+          document.getElementById("localReassigned");
+        localReassignedElement.innerHTML = `Reassigned: x = ${x}, y = ${y}`;
       }
       reassign();
 
@@ -65,7 +115,8 @@
       counter++;
       counter++;
       counter++;
-      console.log(`Counter: ${counter}`);
+      const incrementElement = document.getElementById("increment");
+      incrementElement.innerHTML = `Counter: ${counter}`;
 
       //=========================================================
       // 5. Type Conversion and Coercion
@@ -75,12 +126,13 @@
       const numInString2 = prompt("Enter the second number");
 
       const sum = Number(numInString1) + Number(numInString2);
-      console.log(`The sum of the two numbers is: ${sum}`);
+      const sumElement = document.getElementById("sum");
+      sumElement.innerHTML = `Sum: ${sum}`;
 
       // Part B
       const string = sum.toString() + " years old";
-      console.log(string);
+      const ageElement = document.getElementById("age");
+      ageElement.innerHTML = `Age: ${string}`;
     </script>
-  </head>
-  <body></body>
+  </body>
 </html>
