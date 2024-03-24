@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab9</title>
+  </head>
+  <body>
+    <p id="inventory"></p>
+    <script>
+      // 1. Initialize an empty inventory object.
+      const inventory = {};
+
+      // 2. Implement a function called addProduct that takes parameters for product ID, name, and quantity. This function should add the product to the inventory object.
+      function addProduct(id, name, quantity) {
+        inventory[id] = { name, quantity };
+      }
+
+      // 3. Implement a function called displayInventory that displays the current inventory.
+      function displayInventory() {
+        console.log("Inventory");
+        console.log("===================================");
+        for (const id in inventory) {
+          console.group();
+          console.log(`ID: ${id}`);
+          console.log(`Name: ${inventory[id].name}`);
+          console.log(`Quantity: ${inventory[id].quantity}`);
+          console.groupEnd();
+        }
+        console.log("===================================");
+      }
+
+      // 4. Implement a function called findProduct that takes a product ID as input and checks if the product exists in the inventory. If the product exists, it should display its details; otherwise, it should display a message indicating that the product is not found.
+      function findProduct(id) {
+        if (inventory[id]) {
+          console.log(`Product ID: ${id}`);
+          console.log(`Name: ${inventory[id].name}`);
+          console.log(`Quantity: ${inventory[id].quantity}`);
+        } else {
+          console.log(`Product with ID ${id} not found`);
+        }
+      }
+
+      // Examples of using the functions
+      addProduct(1, "Apple", 10);
+      addProduct(2, "Banana", 20);
+      addProduct(3, "Orange", 30);
+      displayInventory();
+      findProduct(2);
+      findProduct(4);
+    </script>
+  </body>
+</html>
