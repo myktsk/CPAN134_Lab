@@ -1,2 +1,3 @@
 # Screenshot
-![30b12dc0aa5a7611b3a774807f8051e3](https://github.com/myktsk/CPAN134_Lab/assets/22167483/6b595ab1-178a-477f-9dfd-b2266e9fe140)
+
+![9471b1f660f0f62222b54fad94386d12](https://github.com/myktsk/CPAN134_Lab/assets/22167483/5dc27c63-56f9-4a84-8e38-cc5aaa1806ce)
